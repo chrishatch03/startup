@@ -14,6 +14,17 @@ What is the hardest thing about organizing your life? Its keeping your plans, go
 
 #### Design
 
+<div style="display: flex; align-items: center;">
+    <label for="loginPage" style="margin-right: 10px;">Login Page</label>
+    <img id="loginPage" src="./assets/loginPage.png" style="height: 200px; margin-right: 10px;" />
+    <label for="planningPage" style="margin-right: 10px;">Planning Page</label>
+    <img id="planningPage" src="./assets/planningBoard.png" style="height: 200px;" />
+</div>
+
+#### Key Features
+
+#### Technologies
+
 ***HTML*** - Main landing page with motivating quotes, authentication page for signin, signup, and main planning dashboard for authenticated user. HTML elements include dynamic lists where users can see goals, personal roles, and checklist Items for various different categories in their weekly planning.
 
 ***CSS*** - Finished app will have CSS modules for each component and a global module for the whole app's theme.
