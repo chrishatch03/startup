@@ -75,3 +75,21 @@ registered to my elastic IP address 34.195.116.217
 **HTTPS** - The secure version of HTTP is called Secure Hypertext Transport Protocol (HTTPS)
 **TLS** - The handshake negotiation (Sometimes called SSL)
 **Web Certificate** - A core piece of the handshake is the exchange of a web certificate that identifies the domain name of the server creating the secure connection. The browser will compare the certificate domain name to the one represented in the URL and if they don't match, or the certificate is invalid or out of date, it will display a massive warning.
+
+
+## Assignments to turn in
+
+### The Console
+
+Experiment with console commands.
+
+Once you have done this, go over to the assignments page in Canvas and submit the text that results from running `cat other.txt`.
+
+***RESULTS to submit to canvas***
+"xxyy"
+```
+Christopher test ➤➤ cat other.txt
+xxyy
+Christopher test ➤➤
+```
+
