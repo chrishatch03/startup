@@ -25,7 +25,18 @@ What is the hardest thing about organizing your life? Its keeping your plans, go
     </div>
 </div>
 
-#### Key Features
+#### Key features
+
+- Display of and ability to edit lists for the following categories
+    - Checklist Items: Things you need to plan for
+    - Roles you'll take on this week
+    - Goals you have for this week
+    - Long term Vision Board goals
+    - A Scripture Study list of topics
+- Edit a notepad that saves automatically
+- Chat with others to coordinate your plans
+- Changes are persistently stored
+- Secure login over HTTPS
 
 #### Technologies
 
