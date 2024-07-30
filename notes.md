@@ -82,7 +82,12 @@ registered to my elastic IP address 34.195.116.217
 **TLS** - The handshake negotiation (Sometimes called SSL)
 **Web Certificate** - A core piece of the handshake is the exchange of a web certificate that identifies the domain name of the server creating the secure connection. The browser will compare the certificate domain name to the one represented in the URL and if they don't match, or the certificate is invalid or out of date, it will display a massive warning.
 
+## Simon
 
+to deploy simon-html deliverable
+```
+Christopher simon-html ➤➤ ./deployFiles.sh -k <path to pemkey> -h myvision.click -s simon
+```
 
 # Assignments to turn in
 
