@@ -1,12 +1,18 @@
-# Startup: CS 260 Project
+# Weekly Planner: CS 260 Project
 
 <p align="center">
   <a href="notes.md"><strong>My Notes</strong></a> ·
-  <a href="#startup-specifications"><strong>Startup Specifications</strong></a> ·
+  <a href="#specification-deliverable"><strong>Specification Deliverable</strong></a> ·
 </p>
 <br/>
 
-## Startup Specifications
+## Specification Deliverable
+
+#### Elevator Pitch
+
+What is the hardest thing about organizing your life? Its keeping your plans, goals, and vision organized in one place. It's never convenient/effective keeping your notes in separate notebooks, calendars, and folders, and if youre trying to do it digitally then you have to make your plans using multiple applications. This Weekly Planning brings everything together in one simple app, that even allows you to collaborate on your plans with others, using a chat feature and interactive components to help you keep track of your vision.
+
+#### Design
 
 ***HTML*** - Main landing page with motivating quotes, authentication page for signin, signup, and main planning dashboard for authenticated user. HTML elements include dynamic lists where users can see goals, personal roles, and checklist Items for various different categories in their weekly planning.
 
