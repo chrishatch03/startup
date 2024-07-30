@@ -129,3 +129,7 @@ Forked pen for this assignment "https://codepen.io/Christopher-Hatch/pen/BagQpaO
 
 Forked pen for this assignment "https://codepen.io/Christopher-Hatch/pen/ZEdBLQY"
 
+## HTML Input Elements
+
+Forked pen for this assignment "https://codepen.io/Christopher-Hatch/pen/WNqRwzM"
+
