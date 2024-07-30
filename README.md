@@ -14,11 +14,15 @@ What is the hardest thing about organizing your life? Its keeping your plans, go
 
 #### Design
 
-<div style="display: flex; align-items: center;">
-    <label for="loginPage" style="margin-right: 10px;">Login Page</label>
-    <img id="loginPage" src="./assets/loginPage.png" style="height: 200px; margin-right: 10px;" />
-    <label for="planningPage" style="margin-right: 10px;">Planning Page</label>
-    <img id="planningPage" src="./assets/planningBoard.png" style="height: 200px;" />
+<div style="display: flex; align-items: flex-start;">
+    <div style="display: flex; flex-direction: column; align-items: center; margin-right: 20px;">
+        <img id="loginPage" src="./assets/loginPage.png" style="height: 200px;" />
+        <label for="loginPage">Login Page</label>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <img id="planningPage" src="./assets/planningBoard.png" style="height: 200px;" />
+        <label for="planningPage">Planning Page</label>
+    </div>
 </div>
 
 #### Key Features
