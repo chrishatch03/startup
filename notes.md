@@ -77,9 +77,9 @@ registered to my elastic IP address 34.195.116.217
 **Web Certificate** - A core piece of the handshake is the exchange of a web certificate that identifies the domain name of the server creating the secure connection. The browser will compare the certificate domain name to the one represented in the URL and if they don't match, or the certificate is invalid or out of date, it will display a massive warning.
 
 
-## Assignments to turn in
+# Assignments to turn in
 
-### The Console
+## The Console
 
 Experiment with console commands.
 
@@ -92,4 +92,17 @@ Christopher test ➤➤ cat other.txt
 xxyy
 Christopher test ➤➤
 ```
+
+## Amazon Web Services - EC2
+
+1. Create an EC2 instance using the class AMI (`ami-0b009f6c56cdd83ed`).
+1. Assign an elastic IP address (highly suggested).
+1. Test that you can see the default class web page from a browser using the server's public IP address.
+
+Submit a URL using your web server's public IP address to the Canvas assignment.
+
+***Submit*** "http://34.195.116.217"
+
+<img src="./assets/ec2_displays_basic_page.png" style="height: 100px">
+
 
