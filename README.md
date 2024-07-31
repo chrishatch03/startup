@@ -3,6 +3,7 @@
 <p align="center">
   <a href="notes.md"><strong>My Notes</strong></a> ·
   <a href="#specification-deliverable"><strong>Specification Deliverable</strong></a> ·
+  <a href="#html-deliverable"><strong>HTML Deliverable</strong></a> · 
 </p>
 <br/>
 
@@ -53,3 +54,15 @@ What is the hardest thing about organizing your life? Its keeping your plans, go
 ***WebSocket*** - Chat feature where you can plan with other users real time. Keeps planning info in one place, rather than having to look through texts.
 
 ***React*** - List component for displaying db info, input component to dynamically send info to the db, chat component, main page component, login component, home component with quotes.
+
+
+## HTML deliverable
+
+This deliverable includes the four page structure of my application using HTML.
+
+- [x] **HTML pages** - Four HTML pages that represent a landing page, a login page, a planningBoard page where users will record their plans, and a chat page where users can collaborate.
+- [x] **Links** - Each page includes a navigation bar that links to each page.
+- [x] **Text** - Lists of user data is displayed, as well as Headers for each section and chat messages in the chatbox.
+- [ ] **Images** - A user profile image is placed on the planningBoard page
+- [x] **DB/Login** - Input box and submit button for login. Input for all the different types of user data on the planningboard page. Input for chat messages.
+- [x] **WebSocket** - chat feature for collaborating with other users.
