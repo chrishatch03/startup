@@ -64,7 +64,7 @@ What is the hardest thing about organizing your life? Its keeping your plans, go
 
 This deliverable includes the four page structure of my application using HTML.
 
-- [x] **HTML pages** - Four HTML pages that represent a landing page, a login page, a planningBoard page where users will record their plans, and a chat page where users can collaborate.
+- [x] **HTML pages** - Three HTML pages that represent a login page, a planningBoard page where users will record their plans, and a chat page where users can collaborate.
 - [x] **Links** - Each page includes a navigation bar that links to each page.
 - [x] **Text** - Lists of user data is displayed, as well as Headers for each section and chat messages in the chatbox.
 - [x] **Images** - A user profile image is placed on the planningBoard page
