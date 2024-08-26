@@ -1,57 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>MyVision HTML</title>
-		<link rel="icon" href="favicon.ico" />
-		<link rel="stylesheet" href="./styles.css" />
-	</head>
-	<body>
-		<header class="bg-blue-500">
-			<h1>MyVision: Weekly Planner</h1>
-			<p>Christopher Hatch</p>
-			<a href="https://github.com/chrishatch03/startup">Github</a>
-			<nav>
-				<a href="./index.html">Login</a>
-				*
-				<a href="./planningBoard.html">Planning Board</a>
-				*
-				<a href="./chat.html">Chat</a>
-			</nav>
-		</header>
-		<main>
-			<!-- Quote 1 -->
-			<div>
-				<p>"By failing to prepare, you are preparing to fail." - Benjamin Franklin</p>
-			</div>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MyVision HTML</title>
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="h-full" style="background-image: url('./assets/adventurebg.jpg');">
+  <header class="text-white font-bold w-full flex flex-row justify-start h-72">
+    <h1>MyVision: Weekly Planner</h1>
+    <p>Christopher Hatch</p>
+    <a href="https://github.com/chrishatch03/startup">Github</a>
+    <nav>
+      <a href="./index.html">Login</a>
+      *
+      <a href="./planningBoard.html">Planning Board</a>
+      *
+      <a href="./chat.html">Chat</a>
+    </nav>
+  </header>
+  <main class="min-h-screen flex flex-col justify-between">
+    <!-- Quote 1 -->
+    <div>
+      <p>"By failing to prepare, you are preparing to fail." - Benjamin Franklin</p>
+    </div>
 
-			<!-- Main Login Box -->
-			<div>
-				<div>
-					<h1>Plan your Adventure!</h1>
-					<div>
-						<label for="username">Username:</label>
-						<input type="text" id="username" name="username" required />
-						<label for="password">Password:</label>
-						<input type="password" id="password" name="password" required />
-						<button type="submit">Sign In</button>
-						<a href="/html/index.html">Back</a>
-					</div>
-				</div>
-			</div>
-			<!-- Quote 2 -->
-			<div>
-				<p>"Good fortune is what happens when opportunity meets with planning." - Thomas Edison</p>
-			</div>
-			<!-- #7 -->
-			<div>
-				<p>"Planning is bringing the future into the present so that you can do something about it now." - Alan Lakein</p>
-			</div>
-			<footer>
-				<p>© 2021 MyVision</p>
-			</footer>
-			<img src="./assets/adventurebg.jpg" alt="Background Image" />
-		</main>
-	</body>
+    <!-- Main Login Box -->
+    <div>
+      <div>
+        <h1>Plan your Adventure!</h1>
+        <div>
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required />
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+          <button type="submit">Sign In</button>
+          <a href="/html/index.html">Back</a>
+        </div>
+      </div>
+    </div>
+    <!-- Quote 2 -->
+    <div>
+      <p>"Good fortune is what happens when opportunity meets with planning." - Thomas Edison</p>
+    </div>
+    <!-- #7 -->
+    <div>
+      <p>"Planning is bringing the future into the present so that you can do something about it now." - Alan Lakein</p>
+    </div>
+    <footer class="min-h-50 flex flex-col justify-center items-center w-full">
+      <p>© 2021 MyVision</p>
+    </footer>
+  </main>
+</body>
 </html>
