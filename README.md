@@ -67,6 +67,6 @@ This deliverable includes the four page structure of my application using HTML.
 - [x] **HTML pages** - Three HTML pages that represent a login page, a planningBoard page where users will record their plans, and a chat page where users can collaborate.
 - [x] **Links** - Each page includes a navigation bar that links to each page.
 - [x] **Text** - Lists of user data is displayed, as well as Headers for each section and chat messages in the chatbox.
-- [x] **Images** - A user profile image is placed on the planningBoard page. A background image is provided on each page.
+- [x] **Images** - A user profile image is placed on the planningBoard page. A background image is provided on each page (below the footer so it doesn't take up a ton of space).
 - [x] **DB/Login** - Input box and submit button for login. Input for all the different types of user data on the planningboard page. Input for chat messages. Message history and planning list information will be pulled from the database.
 - [x] **WebSocket** - Chat feature for collaborating with other users represents real time chat over websocket.
