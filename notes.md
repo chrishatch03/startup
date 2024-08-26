@@ -141,3 +141,7 @@ Forked pen for this assignment "https://codepen.io/Christopher-Hatch/pen/WNqRwzM
 ## HTML Media Elements
 
 Forked pen for this assignment "https://codepen.io/Christopher-Hatch/pen/WNqRwzM"
+
+## CSS Flexbox
+
+Forked pen for this assignment "https://codepen.io/Christopher-Hatch/pen/OJeEOoQ"
