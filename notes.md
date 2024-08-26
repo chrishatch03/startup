@@ -93,11 +93,17 @@ Christopher simon-html ➤➤ ./deployFiles.sh -k <path to pemkey> -h myvision.c
 
 ### Tailwind
 
-Tailwind doesn't automatically re-build your classes unless you're using a web-framework like next.js or react. While developing, if you want your classes auto-rebuilt you need to run 
+**Switched to using Tailwind Play CDN. You can ignore notes on the Tailwind CLI or Framework, unless it becomes necessary later on.**
+
+When using the Tailwind CLI, Tailwind doesn't automatically re-build your classes unless you're using a web-framework like next.js or react. While developing, if you want your classes auto-rebuilt you need to run 
 ```
 npx tailwindcss build input.css -o styles.css --watch
 ```
 The '--watch' flag makes the build run continuously
+
+
+
+When using a web-framework that uses npm run dev you can use Tailwind's PostCSS option.
 
 # Assignments to turn in
 
