@@ -62,7 +62,7 @@ What is the hardest thing about organizing your life? Its keeping your plans, go
 
 ## HTML deliverable
 
-This deliverable includes the four page structure of my application using HTML.
+This deliverable includes the three page structure of my application using HTML.
 
 - [x] **HTML pages** - Three HTML pages that represent a login page, a planningBoard page where users will record their plans, and a chat page where users can collaborate.
 - [x] **Links** - Each page includes a navigation bar that links to each page.
