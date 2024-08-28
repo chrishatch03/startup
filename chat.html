@@ -9,7 +9,7 @@
 		<!-- <link rel="stylesheet" href="./styles.css" /> -->
 		<script src="https://cdn.tailwindcss.com"></script>
 	</head>
-	<body>
+	<body class="bg-[url('./assets/adventurebg.jpg')] bg-cover bg-center">
 		<header class="font-bold flex flex-row justify-between ml-4 mr-4 mt-4">
 			<nav class="flex flex-row gap-10 items-center">
 				<a href="./index.html" class="bg-gray-400 text-white font-semibold py-2 px-4 rounded hover:bg-gray-700">Login</a>
@@ -22,28 +22,29 @@
 				<h1>MyVision: Weekly Planner</h1>
 			</div>
 		</header>
-		<main>
+		<main class="grid grid-cols-4 gap-4 mt-4 h-screen px-8 pb-8">
 			<!-- Chat Component -->
-			<div>
-				<h1>Collaborate!</h1>
-				<button>New Chat</button>
-				<div>
-					<h2>Chat Box</h2>
-					<div id="message-display">
-						<p>Chat Messages will display here</p>
-						<p>Chat Messages will display here</p>
-						<p>Chat Messages will display here</p>
-					</div>
-					<form>
-						<input type="text" placeholder="Create Message" name="chatMessage" />
-						<button type="submit">Send</button>
-					</form>
-				</div>
+			<div class="h-full col-span-1 col-start-1 bg-white/65 rounded-3xl flex flex-col justify-start pb-8 items-center">
+			  <h1 class="font-bold text-3xl border-b-2 border-black w-full flex justify-center items-center h-20">Collaborate!</h1>
+			  <button>New Chat</button>
 			</div>
-			<footer>
-				<p>© 2021 MyVision</p>
-			</footer>
-			<img src="./assets/adventurebg.jpg" alt="Background Image" />
+			<div class="h-full col-span-3 col-start-2 bg-white/65 rounded-3xl flex flex-col justify-start pb-8 items-center">
+			  <h2 class="font-bold text-3xl border-b-2 border-black w-full flex justify-center items-center h-20">Chat Display</h2>
+			  <div id="message-display">
+				<p>Chat Messages will display here</p>
+				<p>Chat Messages will display here</p>
+				<p>Chat Messages will display here</p>
+			  </div>
+			  <form>
+				<input type="text" placeholder="Create Message" name="chatMessage" />
+				<button type="submit">Send</button>
+			  </form>
+			</div>
+		</div>
+			<!-- <img src="./assets/adventurebg.jpg" alt="Background Image" /> -->
 		</main>
+		<footer class="h-20 bg-white/65 mx-8 mb-8 rounded-3xl col-span-4 flex flex-col justify-center items-center">
+		  <p>© 2021 MyVision</p>
+		</footer>
 	</body>
 </html>
