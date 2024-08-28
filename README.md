@@ -70,3 +70,15 @@ This deliverable includes the three page structure of my application using HTML.
 - [x] **Images** - A user profile image is placed on the planningBoard page. A background image is provided on each page (below the footer so it doesn't take up a ton of space).
 - [x] **DB/Login** - Input box and submit button for login. Input for all the different types of user data on the planningboard page. Input for chat messages. Message history and planning list information will be pulled from the database.
 - [x] **WebSocket** - Chat feature for collaborating with other users represents real time chat over websocket.
+
+
+## CSS deliverable
+
+For this deliverable I properly styled the application into its final appearance.
+
+- [x] **Header, footer, and main content body**
+- [x] **Navigation elements** - I colored the navigation links and made them appear to be buttons. Aligned them in a flex-box to display at the top of the page.
+- [x] **Responsive to window resizing** - My app looks great on all window sizes and devices
+- [x] **Application elements** - Used good contrast and whitespace
+- [x] **Application text content** - Consistent fonts, Headers are bolded and often times bigger to enhance readability
+- [x] **Application images** - Background images are properly covering and centered on their parent divs. Smaller images are sized correctly.
