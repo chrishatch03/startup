@@ -141,7 +141,68 @@
                     <button type="submit" class="bg-white border border-primary dark:border-white rounded-lg px-4 py-2 text-primary h-8 flex flex-row items-center justify-center">+</button>
                 </form>
 			</div>
-            <div class="w-full min-h-full ring-2 rounded-3xl flex flex-col items-center justify-center md:col-span-2 md:col-start-2 md:row-span-2 md:row-start-2 dark:ring-white/10 ring-primary/5 bg-transparent shadow-xl dark:shadow-thick bg-[url('./assets/adventurebg.jpg')] bg-cover overflow-hidden"></div>
+            <div class="w-full min-h-full ring-2 rounded-3xl flex flex-col items-center justify-center md:col-span-2 md:col-start-2 md:row-span-2 md:row-start-2 dark:ring-white/10 ring-primary/5 bg-transparent shadow-xl dark:shadow-thick bg-[url('./assets/adventurebg.jpg')] bg-cover overflow-hidden">
+				<div class="h-full lg:gap-0 md:items-center md:gap-12 p-8 ">
+					<div class="flex flex-col justify-start h-full w-full">
+					  <div class="flex w-full">
+						<div>
+						  <p class="text-xl tracking-tight font-medium text-primary dark:text-white md:text-6xl">
+							MISSION STATEMENT
+						  </p>
+						</div>
+						
+					  </div>
+					  <p class="mt-4 text-sm text-zinc-500 dark:text-zinc-400">
+						A mission statement is not something you write overnight... But fundamentally, your mission statement becomes your constitution, the solid expression of your vision and values. It becomes the criterion by which you measure everything else in your life.
+						<br />
+						<br />
+						Stephen Covey.
+					  </p>
+					  <hr class="border-t-2 border-gray-300 dark:border-zinc-400 my-4"/>
+					  <!-- Display Mission Statement -->
+					  <div class="w-full flex flex-col justify-between bg-white bg-opacity-65 p-4 rounded-3xl">
+						  <div class="w-full h-full flex flex-col gap-2">
+							  <div class="flex flex-col gap-2 min-h-96">  
+								<div key={id} class="flex flex-row justify-between">
+								  Principle title Here
+								  <button class="border border-red-500 rounded-full px-2 py-0.5 text-red-500 text-xs">X</button>
+								</div>
+								<p class="pl-4">Description of principle Here</p>
+								<div key={id} class="flex flex-row justify-between">
+								  Principle title Here
+								  <button class="border border-red-500 rounded-full px-2 py-0.5 text-red-500 text-xs">X</button>
+								</div>
+								<p class="pl-4">Description of principle Here</p>
+								<div key={id} class="flex flex-row justify-between">
+								  Principle title Here
+								  <button class="border border-red-500 rounded-full px-2 py-0.5 text-red-500 text-xs">X</button>
+								</div>
+								<p class="pl-4">Description of principle Here</p>
+							</div>
+							<form action="" class="flex flex-col gap-2">
+								<input
+									class="px-4 focus:outline-none appearance-none h-8 rounded-lg w-full pl-3 pr-10 placeholder-gray-400 bg-primary/5 dark:bg-white/5"
+									type="text"
+									name="firstItem"
+									placeholder="Principle"
+								/>
+								<input
+									class="px-4 focus:outline-none appearance-none h-8 rounded-lg w-full pl-3 pr-10 placeholder-gray-400 bg-primary/5 dark:bg-white/5"
+									type="text"
+									name="secondItem"
+									placeholder="Description"
+								/>
+								<button
+									class="border border-primary dark:border-white rounded-lg px-4 py-2 text-white h-8 flex flex-row items-center justify-center bg-black dark:bg-white dark:text-primary"
+									pendingText="..."
+									type="submit"
+								>+</button>
+							</form>
+						  </div>
+					  </div>
+					</div>
+				  </div>
+			</div>
             <div class="bg-[url('./assets/adventure10.jpg')] bg-cover bg-center w-full ring-2 rounded-3xl p-8 min-h-full dark:ring-white/10 ring-primary/5 bg-transparent shadow-xl dark:shadow-thick"></div>
             <div class="bg-[url('./assets/adventure8.avif')] bg-cover bg-center w-full ring-2 rounded-3xl p-8 min-h-full dark:ring-white/10 ring-primary/5 bg-transparent shadow-xl dark:shadow-thick">
 				<form onSubmit={handleSubmit} class="w-full h-full flex flex-col justify-between p-2">
@@ -185,64 +246,3 @@
         </footer>
     </body>
 </html>
-	<!-- <body>
-		<main>
-			<hr />
-			<div>
-				<p>STORIES OF JESUS!</p>
-				<p>Unlock the doors to explore the rich tapestry of my professional journey and accomplishments.</p>
-				<p>Story #1</p>
-				<p>Story #2</p>
-				<p>Story #3</p>
-				<p>asdf</p>
-				<form>
-					<input type="text" placeholder="••••••••" name="firstItem" />
-					<button type="submit">+</button>
-				</form>
-			</div>
-			<hr />
-			<div>
-				<p>MISSION STATEMENT</p>
-				<p>
-					A mission statement is not something you write overnight... But fundamentally, your mission statement becomes your constitution, the solid expression of your vision and values. It becomes the criterion by which you measure everything else in your life.
-					<br />
-					<br />
-					Stephen Covey.
-				</p>
-				<hr />
-				<div>
-					<div>Principle #1</div>
-					<p>Description #1</p>
-				</div>
-				<div>
-					<div>Principle #2</div>
-					<p>Description #2</p>
-				</div>
-				<div>
-					<div>Principle #3</div>
-					<p>Description #3</p>
-				</div>
-				<form>
-					<input type="text" placeholder="••••••••" name="firstItem" />
-					<input type="text" placeholder="••••••••" name="secondItem" />
-					<button type="submit">+</button>
-				</form>
-			</div>
-			<hr />
-			<div>
-				<form>
-					<p>My Notes</p>
-					<button type="button">
-						<span>Full screen</span>
-					</button>
-					<textarea rows="8" placeholder="Write an article..." required>Write Notes and edit them</textarea>
-					<button type="submit">Save</button>
-				</form>
-			</div>
-			<footer>
-				<p>© 2021 MyVision</p>
-			</footer>
-			<img src="./assets/adventurebg.jpg" alt="Background Image" />
-		</main>
-	</body> -->
-<!-- </html> -->
