@@ -1,9 +1,9 @@
 # Notes
 
 <div style="display: flex; flex-direction: row; items-align: center;">
-    <a href="#git">Git</a>
-    <a href="#aws">AWS</a>
-    <a href="#deployment"></a>
+    <a href="#git">Git</a> *
+    <a href="#aws">AWS</a> *
+    <a href="#deployment"></a> *
     <a href="#assignments-to-turn-in">Assignments to Turn In</a> *
 </div>
 
@@ -118,6 +118,38 @@ The '--watch' flag makes the build run continuously
 
 When using a web-framework that uses npm run dev you can use Tailwind's PostCSS option.
 
+### React Router Dom
+
+Works by setting up a router in main.tsx or main.jsx
+
+```
+// Inject the router into the application root DOM element
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  // BrowserRouter component that controls what is rendered
+  // NavLink component captures user navigation requests
+  // Routes component defines what component is routed to
+  <BrowserRouter>
+    <div className='app'>
+      <nav>
+        <NavLink to='/'>Home</Link>
+        <NavLink to='/about'>About</Link>
+        <NavLink to='/users'>Users</Link>
+      </nav>
+
+      <main>
+        <Routes>
+          <Route path='/' element={<Home />} exact />
+          <Route path='/about' element={<About />} />
+          <Route path='/users' element={<Users />} />
+          <Route path='*' element={<Navigate to='/' replace />} />
+        </Routes>
+      </main>
+    </div>
+  </BrowserRouter>
+);
+```
+
 # Assignments to turn in
 
 
@@ -174,3 +206,31 @@ Forked pen for this assignment "https://codepen.io/Christopher-Hatch/pen/WNqRwzM
 ## CSS Flexbox
 
 Forked pen for this assignment "https://codepen.io/Christopher-Hatch/pen/OJeEOoQ"
+
+## JS Arrays
+
+Forked pen for this assignment "https://codepen.io/Christopher-Hatch/pen/WNqKjmR"
+
+## JS DOM
+
+Forked pen for this assignment "https://codepen.io/Christopher-Hatch/pen/zYVLzxm"
+
+## JS Pizza Promise
+
+Forked pen for this assignment "https://codepen.io/Christopher-Hatch/pen/KKjBqbx"
+
+## JS Components
+
+Forked pen for this assignment "https://codepen.io/Christopher-Hatch/pen/LYKBjVR"
+
+## React Tic-tac-toe Tutorial
+
+Forked CodeSandbox for this assignment "https://codesandbox.io/p/sandbox/react-dev-forked-f5g76l?layout=%257B%2522sidebarPanel%2522%253A%2522EXPLORER%2522%252C%2522rootPanelGroup%2522%253A%257B%2522direction%2522%253A%2522horizontal%2522%252C%2522contentType%2522%253A%2522UNKNOWN%2522%252C%2522type%2522%253A%2522PANEL_GROUP%2522%252C%2522id%2522%253A%2522ROOT_LAYOUT%2522%252C%2522panels%2522%253A%255B%257B%2522type%2522%253A%2522PANEL_GROUP%2522%252C%2522contentType%2522%253A%2522UNKNOWN%2522%252C%2522direction%2522%253A%2522vertical%2522%252C%2522id%2522%253A%2522cm0e9acit00073b6imk6m9tjn%2522%252C%2522sizes%2522%253A%255B100%255D%252C%2522panels%2522%253A%255B%257B%2522type%2522%253A%2522PANEL_GROUP%2522%252C%2522contentType%2522%253A%2522EDITOR%2522%252C%2522direction%2522%253A%2522horizontal%2522%252C%2522id%2522%253A%2522EDITOR%2522%252C%2522panels%2522%253A%255B%257B%2522type%2522%253A%2522PANEL%2522%252C%2522contentType%2522%253A%2522EDITOR%2522%252C%2522id%2522%253A%2522cm0e9acis00033b6iho0l6j4f%2522%257D%255D%257D%252C%257B%2522type%2522%253A%2522PANEL_GROUP%2522%252C%2522contentType%2522%253A%2522SHELLS%2522%252C%2522direction%2522%253A%2522horizontal%2522%252C%2522id%2522%253A%2522SHELLS%2522%252C%2522panels%2522%253A%255B%257B%2522type%2522%253A%2522PANEL%2522%252C%2522contentType%2522%253A%2522SHELLS%2522%252C%2522id%2522%253A%2522cm0e9acis00043b6ideanuoz2%2522%257D%255D%257D%255D%257D%252C%257B%2522type%2522%253A%2522PANEL_GROUP%2522%252C%2522contentType%2522%253A%2522DEVTOOLS%2522%252C%2522direction%2522%253A%2522vertical%2522%252C%2522id%2522%253A%2522DEVTOOLS%2522%252C%2522panels%2522%253A%255B%257B%2522type%2522%253A%2522PANEL%2522%252C%2522contentType%2522%253A%2522DEVTOOLS%2522%252C%2522id%2522%253A%2522cm0e9acis00063b6i5fvjzlrp%2522%257D%255D%257D%255D%252C%2522sizes%2522%253A%255B50%252C50%255D%257D%252C%2522tabbedPanels%2522%253A%257B%2522cm0e9acis00033b6iho0l6j4f%2522%253A%257B%2522tabs%2522%253A%255B%257B%2522id%2522%253A%2522cm0e9acis00023b6i0nx82iho%2522%252C%2522mode%2522%253A%2522permanent%2522%252C%2522type%2522%253A%2522FILE%2522%252C%2522filepath%2522%253A%2522%252Fsrc%252FApp.js%2522%252C%2522state%2522%253A%2522IDLE%2522%257D%255D%252C%2522id%2522%253A%2522cm0e9acis00033b6iho0l6j4f%2522%252C%2522activeTabId%2522%253A%2522cm0e9acis00023b6i0nx82iho%2522%257D%252C%2522cm0e9acis00063b6i5fvjzlrp%2522%253A%257B%2522id%2522%253A%2522cm0e9acis00063b6i5fvjzlrp%2522%252C%2522activeTabId%2522%253A%2522cm0e9czuf000k3b6itp5xogb7%2522%252C%2522tabs%2522%253A%255B%257B%2522id%2522%253A%2522cm0e9acis00053b6ihtgp8nhk%2522%252C%2522mode%2522%253A%2522permanent%2522%252C%2522type%2522%253A%2522UNASSIGNED_PORT%2522%252C%2522port%2522%253A0%257D%252C%257B%2522type%2522%253A%2522UNASSIGNED_PORT%2522%252C%2522port%2522%253A0%252C%2522id%2522%253A%2522cm0e9czuf000k3b6itp5xogb7%2522%252C%2522mode%2522%253A%2522permanent%2522%257D%255D%257D%252C%2522cm0e9acis00043b6ideanuoz2%2522%253A%257B%2522tabs%2522%253A%255B%255D%252C%2522id%2522%253A%2522cm0e9acis00043b6ideanuoz2%2522%257D%257D%252C%2522showDevtools%2522%253Atrue%252C%2522showShells%2522%253Afalse%252C%2522showSidebar%2522%253Atrue%252C%2522sidebarPanelSize%2522%253A15%257D"
+
+## React Reactivity
+
+Forked pen for this assignment "https://codepen.io/Christopher-Hatch/pen/vYqaeOV"
+
+## React Router
+
+Forked pen for this assignment "https://codepen.io/Christopher-Hatch/pen/yLdqzJa"
