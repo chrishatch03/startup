@@ -26,14 +26,17 @@
 			<!-- Chat Component -->
 			<div class="h-full col-span-1 col-start-1 bg-white/65 rounded-3xl flex flex-col justify-start pb-8 items-center">
 			  <h1 class="font-bold text-3xl border-b-2 border-black w-full flex justify-center items-center h-20">Collaborate!</h1>
-			  <button>New Chat</button>
+				<form action="" class="flex w-full p-8 justify-between">
+					<input type="text" class="rounded-xl">
+					<button class="bg-black text-white rounded-3xl py-4 px-6">New Chat</button>
+				</form>
 			</div>
 			<div class="h-full col-span-3 col-start-2 bg-white/65 rounded-3xl flex flex-col justify-start pb-8 items-center">
 			  <h2 class="font-bold text-3xl border-b-2 border-black w-full flex justify-center items-center h-20">Chat Display</h2>
-			  <div id="message-display" class="w-full h-full">
-				<p>Chat Messages will display here</p>
-				<p>Chat Messages will display here</p>
-				<p>Chat Messages will display here</p>
+			  <div id="message-display" class="w-full h-full flex flex-col gap-8 p-8">
+				<p class="justify-start p-4 bg-blue-400 rounded-3xl max-w-96 text-wrap">Chat Messages will display here</p>
+				<p class="justify-end p-4 bg-blue-400 rounded-3xl max-w-96 text-wrap">Chat Messages will display here</p>
+				<p class="justify-start p-4 bg-blue-400 rounded-3xl max-w-96 text-wrap">Chat Messages will display here</p>
 			</div>
 			<form class="w-3/4 px-8 h-20 rounded-3xl ring-2 ring-black bg-red-300 flex justify-center items-center">
 			  <input type="text" placeholder="Create Message" name="chatMessage" class="w-3/4 p-2 rounded-xl"/>
