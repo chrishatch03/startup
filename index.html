@@ -9,7 +9,7 @@
 		<script src="https://cdn.tailwindcss.com"></script>
 	</head>
 	<body class="bg-primary dark:bg-black">
-		<header class="font-bold flex flex-row justify-between ml-4 mr-4 mt-4">
+		<header class="font-bold flex flex-row flex-wrap justify-between ml-4 mr-4 mt-4">
 			<nav class="flex flex-row gap-10 items-center">
 				<a href="#" class="bg-gray-400 text-white font-semibold py-2 px-4 rounded hover:bg-gray-700">Login</a>
 				<a href="./planningBoard.html" class="bg-gray-400 text-white font-semibold py-2 px-4 rounded hover:bg-gray-700">Planning Board</a>
@@ -23,7 +23,7 @@
 		</header>
 		<main class="w-full h-full min-h-screen p-4 gap-4 grid grid-cols-1 md:grid-cols-3 md:grid-rows-4 lg:grid-cols-4 lg:grid-rows-3">
 			<div class="bg-[url('./assets/adventure6.avif')] bg-cover bg-center w-full h-full ring-2 rounded-3xl flex flex-col items-center justify-start sm:justify-center lg:justify-start text-center min-h-empty md:row-span-2 dark:ring-white/10 ring-primary/5 bg-transparent shadow-xl dark:shadow-thick">
-				<h1 class="text-6xl mt-6 font-medium lg:text-4xl tracking-tight text-gray-700 dark:text-gray-100">Weekly Planner</h1>
+				<h1 class="text-6xl p-2 rounded-3xl bg-white bg-opacity-65 lg:bg-transparent my-6 font-medium lg:text-4xl tracking-tight text-gray-700 dark:text-gray-100 ">Weekly Planner</h1>
 			</div>
 			<div class="bg-[url('./assets/adventure4.avif')] bg-cover bg-center w-full h-full ring-2 rounded-3xl p-8 min-h-empty dark:ring-white/10 ring-primary/5 bg-transparent shadow-xl dark:shadow-thick">
 				<p class="bg-slate-50 bg-opacity-50 rounded-3xl h-full w-full text-gray-700 dark:text-gray-100 text-center flex flex-col justify-center p-8">"By failing to prepare, you are preparing to fail." - Benjamin Franklin</p>
@@ -33,13 +33,13 @@
 			<div class="w-full h-full ring-2 rounded-3xl flex flex-col items-center justify-center min-h-empty md:col-span-2 md:col-start-2 md:row-span-2 md:row-start-2 dark:ring-white/10 ring-primary/5 bg-transparent shadow-xl dark:shadow-thick bg-[url('./assets/adventurebg.jpg')] bg-cover overflow-hidden">
 				<h1 class="text-3xl mt-6 font-medium lg:text-5xl tracking-tight text-gray-700 dark:text-gray-100">Plan your Adventure!</h1>
 				<div class="h-3/4 flex flex-col items-center justify-center">
-					<div class="flex flex-col items-center">
+					<div class="flex flex-col items-center bg-white bg-opacity-65 my-2 p-4 lg:p-8 rounded-3xl gap-2">
 						<label for="username">Username:</label>
 						<input type="text" id="username" name="username" required />
 						<label for="password">Password:</label>
 						<input type="password" id="password" name="password" required />
-						<button type="submit">Sign In</button>
-						<a href="/html/index.html">Back</a>
+						<button class="bg-black py-2 px-4 rounded-3xl text-white">Sign In</button>
+						<button class="bg-black py-2 px-4 rounded-3xl text-white">Sign Up</a>
 					</div>
 				</div>
 			</div>
