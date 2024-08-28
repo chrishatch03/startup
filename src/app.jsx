@@ -1,6 +1,5 @@
 import React from 'react';
 import './index.css';
-import './app.css';
 import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
 import Login from './login/login';
 import PlanningBoard from './planning-board/planning-board';
@@ -10,7 +9,7 @@ export default function App() {
   return (
         <>
         <BrowserRouter>
-            <header className="font-bold flex flex-row flex-wrap justify-between ml-4 mr-4 mt-4">
+            <header className="font-bold flex flex-row flex-wrap justify-between m-4">
             <nav className="flex flex-row gap-10 items-center">
                 <NavLink to="/" className="bg-gray-400 text-white font-semibold py-2 px-4 rounded hover:bg-gray-700">Login</NavLink>
                 <NavLink to="/planningBoard" className="bg-gray-400 text-white font-semibold py-2 px-4 rounded hover:bg-gray-700">Planning Board</NavLink>
@@ -27,6 +26,9 @@ export default function App() {
                 <Route path="/planningBoard" element={<PlanningBoard />} />
                 <Route path="/chat" element={<Chat />} />
             </Routes>
+            <footer class="h-20 flex flex-col justify-center items-center w-full">
+			<p>© 2021 MyVision</p>
+		</footer>
         </BrowserRouter>
         </>
     );
