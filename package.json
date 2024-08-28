@@ -1,0 +1,21 @@
+{
+  "name": "startup",
+  "version": "1.0.0",
+  "description": "<p align=\"center\">   <a href=\"notes.md\"><strong>My Notes</strong></a> ·   <a href=\"#specification-deliverable\"><strong>Specification Deliverable</strong></a> ·   <a href=\"#html-deliverable\"><strong>HTML Deliverable</strong></a> ·  </p> <br/>",
+  "main": "tailwind.config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^5.4.2"
+  }
+}
