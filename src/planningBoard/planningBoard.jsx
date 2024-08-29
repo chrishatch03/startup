@@ -25,7 +25,7 @@ export default function PlanningBoard() {
 						<div>• Checklist #4</div>
 					</div>
 					<form className="flex flex-row gap-2 mb-5">
-						<input placeholder="••••••••" type="text" value="" name="checklistItem" className="px-4 focus:outline-none appearance-none h-8 rounded-lg w-full pl-3 pr-10 placeholder-gray-400 bg-primary/50" />
+						<input placeholder="••••••••" type="text" name="checklistItem" className="px-4 focus:outline-none text-white appearance-none h-8 rounded-lg w-full pl-3 pr-10 placeholder-gray-400 bg-primary/50" />
 						<button type="submit" className="bg-white border border-primary dark:border-white rounded-lg px-4 py-2 text-primary h-8 flex flex-row items-center justify-center">+</button>
 					</form>
                 </div>
@@ -40,7 +40,7 @@ export default function PlanningBoard() {
 						<div>• Role #4</div>
 					</div>
 					<form className="flex flex-row gap-2 mb-5">
-						<input placeholder="••••••••" type="text" value="" name="roleItem" className="px-4 focus:outline-none appearance-none h-8 rounded-lg w-full pl-3 pr-10 placeholder-gray-400 bg-primary/50" />
+						<input placeholder="••••••••" type="text" name="roleItem" className="px-4 focus:outline-none text-white appearance-none h-8 rounded-lg w-full pl-3 pr-10 placeholder-gray-400 bg-primary/50" />
 						<button type="submit" className="bg-white border border-primary dark:border-white rounded-lg px-4 py-2 text-primary h-8 flex flex-row items-center justify-center">+</button>
 					</form>
 				</div>
@@ -53,7 +53,7 @@ export default function PlanningBoard() {
 						<div>• Goal #4</div>
 					</div>
 					<form className="flex flex-row gap-2 mb-5">
-						<input placeholder="••••••••" type="text" value="" name="goalItem" className="px-4 focus:outline-none appearance-none h-8 rounded-lg w-full pl-3 pr-10 placeholder-gray-400 bg-primary/50" />
+						<input placeholder="••••••••" type="text" name="goalItem" className="px-4 focus:outline-none text-white appearance-none h-8 rounded-lg w-full pl-3 pr-10 placeholder-gray-400 bg-primary/50" />
 						<button type="submit" className="bg-white border border-primary dark:border-white rounded-lg px-4 py-2 text-primary h-8 flex flex-row items-center justify-center">+</button>
 					</form>
 				</div>
@@ -100,7 +100,7 @@ export default function PlanningBoard() {
 							<div>• Study Item #4</div>
 						</div>
 						<form className="flex flex-row gap-2 mb-5">
-							<input placeholder="••••••••" type="text" value="" name="studyItem" className="px-4 focus:outline-none appearance-none h-8 rounded-lg pl-3 placeholder-gray-400 bg-primary/50" />
+							<input placeholder="••••••••" type="text" name="studyItem" className="px-4 focus:outline-none appearance-none h-8 rounded-lg pl-3 placeholder-gray-400 bg-primary/50" />
 							<button type="submit" className="bg-white border border-primary dark:border-white rounded-lg px-4 py-2 text-primary h-8 flex flex-row items-center justify-center">+</button>
 						</form>
 
@@ -114,7 +114,7 @@ export default function PlanningBoard() {
 							<div>• Study Item #4</div>
 						</div>
 						<form className="flex flex-row gap-2 mb-5">
-							<input placeholder="••••••••" type="text" value="" name="futureStudyItem" className="px-4 focus:outline-none appearance-none h-8 rounded-lg pl-3 placeholder-gray-400 bg-primary/50" />
+							<input placeholder="••••••••" type="text" name="futureStudyItem" className="px-4 focus:outline-none appearance-none h-8 rounded-lg pl-3 placeholder-gray-400 bg-primary/50" />
 							<button type="submit" className="bg-white border border-primary dark:border-white rounded-lg px-4 py-2 text-primary h-8 flex flex-row items-center justify-center">+</button>
 					</form>
 					</div>
@@ -159,13 +159,13 @@ export default function PlanningBoard() {
 							</div>
 							<form action="" className="flex flex-col gap-2">
 								<input
-									className="px-4 focus:outline-none appearance-none h-8 rounded-lg w-full pl-3 pr-10 placeholder-gray-400 bg-primary/50"
+									className="px-4 focus:outline-none text-white appearance-none h-8 rounded-lg w-full pl-3 pr-10 placeholder-gray-400 bg-primary/50"
 									type="text"
 									name="firstItem"
 									placeholder="Principle"
 								/>
 								<input
-									className="px-4 focus:outline-none appearance-none h-8 rounded-lg w-full pl-3 pr-10 placeholder-gray-400 bg-primary/50"
+									className="px-4 focus:outline-none text-white appearance-none h-8 rounded-lg w-full pl-3 pr-10 placeholder-gray-400 bg-primary/50"
 									type="text"
 									name="secondItem"
 									placeholder="Description"

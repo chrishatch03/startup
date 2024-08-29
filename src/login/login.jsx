@@ -17,9 +17,9 @@ export default function Login() {
 				<div className="h-3/4 flex flex-col items-center justify-center">
 					<div className="flex flex-col items-center bg-white bg-opacity-65 my-2 p-4 lg:p-8 rounded-3xl gap-2">
 						<label for="username">Username:</label>
-						<input type="text" id="username" name="username" required />
+						<input type="text" id="username" name="username" className="text-white px-4 focus:outline-none appearance-none h-8 rounded-lg w-full pl-3 pr-10 placeholder-gray-400 bg-primary/50" required />
 						<label for="password">Password:</label>
-						<input type="password" id="password" name="password" required />
+						<input type="password" id="password" name="password" className="text-white px-4 focus:outline-none appearance-none h-8 rounded-lg w-full pl-3 pr-10 placeholder-gray-400 bg-primary/50" required />
 						<button className="bg-black py-2 px-4 rounded-3xl text-white">Sign In</button>
 						<button className="bg-black py-2 px-4 rounded-3xl text-white">Sign Up</button>
 					</div>
