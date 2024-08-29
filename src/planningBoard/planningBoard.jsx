@@ -1,6 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function PlanningBoard() {
+	const [checklist, setChecklist] = useState([]);
+	const [role, setRole] = useState([]);
+	const [goal, setGoal] = useState([]);
+	const [studyNow, setStudyNow] = useState([]);
+	const [studyFuture, setStudyFuture] = useState([]);
+	const [missStatement, setMissStatement] = useState([]);
+	const [notes, setNotes] = useState([]);
 	
   return (
     <main className='container-fluid  text-center'>

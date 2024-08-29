@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function Chat() {
+    const [messages, setMessages] = useState([]);
+
   return (
-    <main className='container-fluid bg-secondary text-center mb-8'>
+    <main className="container-fluid bg-[url('/adventurebg.jpg')] bg-cover bg-center text-center mb-8">
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 mt-4 h-screen p-8 pb-8">
 			<div className="h-full col-span-1 col-start-1 bg-white/65 rounded-3xl flex flex-col justify-start pb-8 items-center">
 			  <h1 className="font-bold text-lg lg:text-3xl border-b-2 border-black w-full flex justify-center items-center h-20">Collaborate!</h1>
