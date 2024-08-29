@@ -33,7 +33,7 @@ export default function PlanningBoard() {
             <div className="flex flex-col gap-2 bg-[url('/adventure4.avif')] bg-cover bg-center w-full ring-2 rounded-3xl p-8 min-h-full dark:ring-white/10 ring-primary/5 bg-transparent shadow-xl dark:shadow-thick">
 				<div className="flex-grow bg-white bg-opacity-65 w-full ring-2 rounded-3xl p-8 dark:ring-white/10 ring-primary/5 shadow-xl dark:shadow-thick">
 					<span className="text-lg font-bold font-sans">Roles</span>
-					<div className="min-h-20">
+					<div className="min-h-20 flex flex-col items-start">
 						<div>• Role #1</div>
 						<div>• Role #2</div>
 						<div>• Role #3</div>
@@ -46,7 +46,7 @@ export default function PlanningBoard() {
 				</div>
 				<div className="flex-grow bg-white bg-opacity-65 w-full ring-2 rounded-3xl p-8 dark:ring-white/10 ring-primary/5 shadow-xl dark:shadow-thick">
 					<span className="text-lg font-bold font-sans">Goals</span>
-					<div className="min-h-20">
+					<div className="min-h-20 flex flex-col items-start">
 						<div>• Goal #1</div>
 						<div>• Goal #2</div>
 						<div>• Goal #3</div>
@@ -91,9 +91,9 @@ export default function PlanningBoard() {
 			<div className="bg-[url('/adventure12.jpg')] p-4 bg-cover bg-center w-full min-h-full ring-2 rounded-3xl md:row-span-2 dark:ring-white/10 ring-primary/5 bg-transparent shadow-xl dark:shadow-thick">
 				<div className="w-full flex flex-col items-center md:items-start gap-2">
 					<span className="text-3xl font-bold font-sans">Stories of Jesus</span>
-					<div className="w-full bg-white rounded-3xl p-2 bg-opacity-65 mb-4">
+					<div className="w-full bg-white rounded-3xl py-4 px-8 bg-opacity-65 mb-4">
 						<span className="text-xl font-bold font-sans">Study this week</span>
-						<div className="min-h-20 flex flex-col gap-2">
+						<div className="min-h-20 flex flex-col gap-2 items-start">
 							<div>• Study Item #1</div>
 							<div>• Study Item #2</div>
 							<div>• Study Item #3</div>
@@ -105,9 +105,9 @@ export default function PlanningBoard() {
 						</form>
 
 					</div>
-					<div className="w-full bg-white rounded-3xl p-2 bg-opacity-65 mb-4">
+					<div className="w-full bg-white rounded-3xl py-4 px-8 bg-opacity-65 mb-4">
 						<span className="text-xl font-bold font-sans">Study in the future</span>
-						<div className="min-h-20 flex flex-col gap-2">
+						<div className="min-h-20 flex flex-col gap-2 items-start">
 							<div>• Study Item #1</div>
 							<div>• Study Item #2</div>
 							<div>• Study Item #3</div>
