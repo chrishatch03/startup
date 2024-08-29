@@ -26,6 +26,9 @@ export default function App() {
           <Route path="/planningBoard" element={<PlanningBoard />} />
           <Route path="/chat" element={<Chat />} />
         </Routes>
+        <footer class="h-20 bg-white/65 mx-8 mb-8 rounded-3xl col-span-4 flex flex-col justify-center items-center">
+		  <p>© 2021 MyVision</p>
+		</footer>
       </BrowserRouter>
     </>
   );
