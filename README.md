@@ -93,6 +93,6 @@ For this deliverable I used JavaScript and React so that the application complet
   - [x] **login** - When you press the login button it takes you to the voting page.
   - [x] **database** - Displayed each of the lists necessary for planning functionality. Currently this is stored and retrieved from local storage, but it will be replaced with the database data later.
   - [x] **WebSocket** - You recieve an automatic response when you send a message using the chat. This will be replaced with WebSocket messages later.
-  - [x] **application logic** - The highlight and ranking number change based up the user's selections.
-- [x] **Router** - Routing between login and voting components.
-- [x] **Hooks** - Vue uses class properties instead of `UseState` to track changes in vote state.
+  - [x] **application logic** - User is able to add to, and delete items from lists. Messages track the time that they are sent.
+- [x] **Router** - Routing between login, planningBoard, and chat components.
+- [x] **Hooks** - Use of `UseState` to track values of input elements, and to display data retrieved from localStorage. `UseEffect` for initializing component data.
