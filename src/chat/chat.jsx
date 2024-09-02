@@ -8,9 +8,9 @@ export default function Chat() {
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 mt-4 h-screen p-8 pb-8">
 			<div className="h-full col-span-1 col-start-1 bg-white/65 rounded-3xl flex flex-col justify-start pb-8 items-center">
 			  <h1 className="font-bold text-lg lg:text-3xl border-b-2 border-black w-full flex justify-center items-center h-20">Collaborate!</h1>
-				<form className="flex flex-wrap w-full p-8 justify-between">
-					<input type="text" className="rounded-xl min-h-10 outline-none pl-8" />
-					<button className="bg-black text-white rounded-3xl py-4 px-6">New Chat</button>
+				<form className="flex flex-wrap w-full p-8 lg:p-4 lg:flex-col justify-between">
+					<input type="text" className="rounded-xl min-h-10 outline-none pl-8" placeholder="Start a chat with..." />
+					<button className="bg-black text-white rounded-3xl py-4 lg:mt-4 px-6">New Chat</button>
 				</form>
 			</div>
 			<div className="h-full lg:col-span-3 lg:col-start-2 bg-white/65 rounded-3xl flex flex-col justify-start pb-8 items-center">
