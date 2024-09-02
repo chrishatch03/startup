@@ -9,7 +9,7 @@ export default function App() {
   return (
     <>
       <BrowserRouter>
-        <header className="font-bold flex flex-row flex-wrap justify-between ml-4 mb-4 mr-4">
+        <header className="font-bold flex flex-col lg:flex-row flex-wrap justify-center items-center lg:justify-between ml-4 mb-4 mr-4">
           <nav className="flex flex-row gap-10 items-center mt-4">
             <NavLink to="/" className="bg-gray-400 text-white font-semibold py-2 px-4 rounded hover:bg-gray-700">Login</NavLink>
             <NavLink to="/planningBoard" className="bg-gray-400 text-white font-semibold py-2 px-4 rounded hover:bg-gray-700">Planning Board</NavLink>
