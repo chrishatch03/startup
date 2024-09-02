@@ -1,8 +1,157 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { Context } from '../context/context';
 
 export default function PlanningBoard() {
-	const { state, dispatch } = useContext(Context);
+    const [addTask, setAddTask] = useState('');
+    const [tasks, setTasks] = useState([]);
+    const [addRole, setAddRole] = useState('');
+    const [roles, setRoles] = useState([]);
+    const [addGoal, setAddGoal] = useState('');
+    const [goals, setGoals] = useState([]);
+    const [addStudyNow, setAddStudyNow] = useState('');
+    const [studyNow, setStudyNow] = useState([]);
+    const [addStudyFuture, setAddStudyFuture] = useState('');
+    const [studyFuture, setStudyFuture] = useState([]);
+    const [addMissState, setAddMissState] = useState('');
+    const [missState, setMissState] = useState([]);
+
+	useEffect(() => {
+        const storedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
+        if (storedTasks.length === 0) {
+            storedTasks.push('Add a task to get started');
+        }
+        setTasks(storedTasks);
+
+        const storedRoles = JSON.parse(localStorage.getItem('roles')) || [];
+        setRoles(storedRoles);
+
+        const storedGoals = JSON.parse(localStorage.getItem('goals')) || [];
+        setGoals(storedGoals);
+
+        const storedStudyNow = JSON.parse(localStorage.getItem('studyNow')) || [];
+        setStudyNow(storedStudyNow);
+
+        const storedStudyFuture = JSON.parse(localStorage.getItem('studyFuture')) || [];
+        setStudyFuture(storedStudyFuture);
+
+        const storedMissState = JSON.parse(localStorage.getItem('missState')) || [];
+        setMissState(storedMissState);
+    }, []);
+
+    const handleAddTask = () => {
+        if (addTask.trim() !== '') {
+            const updatedTasks = [...tasks, addTask];
+            localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+            setTasks(updatedTasks);
+            setAddTask('');
+        }
+    };
+
+    const handleDeleteTask = (index) => {
+        const updatedTasks = tasks.filter((_, i) => i !== index);
+        setTasks(updatedTasks);
+        localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+    };
+
+    const handleAddTaskChange = (event) => {
+        setAddTask(event.target.value);
+    };
+
+    const handleAddRole = () => {
+        if (addRole.trim() !== '') {
+            const updatedRoles = [...roles, addRole];
+            localStorage.setItem('roles', JSON.stringify(updatedRoles));
+            setRoles(updatedRoles);
+            setAddRole('');
+        }
+    };
+
+    const handleDeleteRole = (index) => {
+        const updatedRoles = roles.filter((_, i) => i !== index);
+        setRoles(updatedRoles);
+        localStorage.setItem('roles', JSON.stringify(updatedRoles));
+    };
+
+    const handleAddRoleChange = (event) => {
+        setAddRole(event.target.value);
+    };
+
+    const handleAddGoal = () => {
+        if (addGoal.trim() !== '') {
+            const updatedGoals = [...goals, addGoal];
+            localStorage.setItem('goals', JSON.stringify(updatedGoals));
+            setGoals(updatedGoals);
+            setAddGoal('');
+        }
+    };
+
+    const handleDeleteGoal = (index) => {
+        const updatedGoals = goals.filter((_, i) => i !== index);
+        setGoals(updatedGoals);
+        localStorage.setItem('goals', JSON.stringify(updatedGoals));
+    };
+
+    const handleAddGoalChange = (event) => {
+        setAddGoal(event.target.value);
+    };
+
+    const handleAddStudyNow = () => {
+        if (addStudyNow.trim() !== '') {
+            const updatedStudyNow = [...studyNow, addStudyNow];
+            localStorage.setItem('studyNow', JSON.stringify(updatedStudyNow));
+            setStudyNow(updatedStudyNow);
+            setAddStudyNow('');
+        }
+    };
+
+    const handleDeleteStudyNow = (index) => {
+        const updatedStudyNow = studyNow.filter((_, i) => i !== index);
+        setStudyNow(updatedStudyNow);
+        localStorage.setItem('studyNow', JSON.stringify(updatedStudyNow));
+    };
+
+    const handleAddStudyNowChange = (event) => {
+        setAddStudyNow(event.target.value);
+    };
+
+    const handleAddStudyFuture = () => {
+        if (addStudyFuture.trim() !== '') {
+            const updatedStudyFuture = [...studyFuture, addStudyFuture];
+            localStorage.setItem('studyFuture', JSON.stringify(updatedStudyFuture));
+            setStudyFuture(updatedStudyFuture);
+            setAddStudyFuture('');
+        }
+    };
+
+    const handleDeleteStudyFuture = (index) => {
+        const updatedStudyFuture = studyFuture.filter((_, i) => i !== index);
+        setStudyFuture(updatedStudyFuture);
+        localStorage.setItem('studyFuture', JSON.stringify(updatedStudyFuture));
+    };
+
+    const handleAddStudyFutureChange = (event) => {
+        setAddStudyFuture(event.target.value);
+    };
+
+    const handleAddMissState = () => {
+        if (addMissState.trim() !== '') {
+            const updatedMissState = [...missState, addMissState];
+            localStorage.setItem('missState', JSON.stringify(updatedMissState));
+            setMissState(updatedMissState);
+            setAddMissState('');
+        }
+    };
+
+    const handleDeleteMissState = (index) => {
+        const updatedMissState = missState.filter((_, i) => i !== index);
+        setMissState(updatedMissState);
+        localStorage.setItem('missState', JSON.stringify(updatedMissState));
+    };
+
+    const handleAddMissStateChange = (event) => {
+        setAddMissState(event.target.value);
+    };
+
 
   return (
     <main className='container-fluid  text-center'>
@@ -14,50 +163,89 @@ export default function PlanningBoard() {
 					<svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 1024 1024" class="icon" version="1.1"><path d="M691.573 338.89c-1.282 109.275-89.055 197.047-198.33 198.331-109.292 1.282-197.065-90.984-198.325-198.331-0.809-68.918-107.758-68.998-106.948 0 1.968 167.591 137.681 303.31 305.272 305.278C660.85 646.136 796.587 503.52 798.521 338.89c0.811-68.998-106.136-68.918-106.948 0z" fill="#4A5699"/><path d="M294.918 325.158c1.283-109.272 89.051-197.047 198.325-198.33 109.292-1.283 197.068 90.983 198.33 198.33 0.812 68.919 107.759 68.998 106.948 0C796.555 157.567 660.839 21.842 493.243 19.88c-167.604-1.963-303.341 140.65-305.272 305.278-0.811 68.998 106.139 68.919 106.947 0z" fill="#C45FA0"/><path d="M222.324 959.994c0.65-74.688 29.145-144.534 80.868-197.979 53.219-54.995 126.117-84.134 201.904-84.794 74.199-0.646 145.202 29.791 197.979 80.867 54.995 53.219 84.13 126.119 84.79 201.905 0.603 68.932 107.549 68.99 106.947 0-1.857-213.527-176.184-387.865-389.716-389.721-213.551-1.854-387.885 178.986-389.721 389.721-0.601 68.991 106.349 68.933 106.949 0.001z" fill="#E5594F"/></svg>
 				</div>
                     <div className="flex flex-col items-start font-bold">
-                        <p>{state.user.name ? (<span>state.user?.name.toString()</span>) : "User's Name"}</p>
+                        <p>User's Name ex. "Go Getter"</p>
                         <p>User Bio Goes Here</p>
                     </div>
                 </div>
                 <div className="w-full flex flex-col items-center md:items-start md:ml-10 gap-2">
-                    <span className="text-lg font-bold font-sans">This Week</span>
-					<div className="min-h-20 flex flex-col gap-2">
-						<div>• Checklist #1</div>
-						<div>• Checklist #2</div>
-						<div>• Checklist #3</div>
-						<div>• Checklist #4</div>
-					</div>
-					<form className="flex flex-row gap-2 mb-5">
-						<input placeholder="••••••••" type="text" name="checklistItem" className="px-4 focus:outline-none text-white appearance-none h-8 rounded-lg w-full pl-3 pr-10 placeholder-gray-400 bg-primary/50" />
-						<button type="submit" className="bg-white border border-primary dark:border-white rounded-lg px-4 py-2 text-primary h-8 flex flex-row items-center justify-center">+</button>
-					</form>
-                </div>
+                        <span className="text-lg font-bold font-sans">This Week</span>
+                        <div className="min-h-20 flex flex-col flex-grow gap-2">
+							{tasks.map((task, index) => (
+                                <div key={index} className="flex w-full justify-between items-center">
+                                    <span>• {task}</span>
+                                    <button onClick={() => handleDeleteTask(index)} className="bg-red-500 bg-opacity-60 text-white p-1 rounded-lg ml-2">Delete</button>
+                                </div>
+                            ))}
+                        </div>
+                        <form className="flex flex-row gap-2 mb-5">
+						<input
+                                placeholder="••••••••"
+                                type="text"
+                                value={addTask}
+                                onChange={handleAddTaskChange}
+                                className="px-4 focus:outline-none text-white appearance-none h-8 rounded-lg w-full pl-3 pr-10 placeholder-gray-400 bg-primary/50"
+                            />
+                            <button
+                                onClick={handleAddTask}
+                                className="bg-white border border-primary dark:border-white rounded-lg px-4 py-2 text-primary h-8 flex flex-row items-center justify-center"
+                            >
+                                +
+                            </button>
+                        </form>
+                    </div>
             </div>
             <div className="flex flex-col gap-2 bg-[url('/adventure4.avif')] bg-cover bg-center w-full ring-2 rounded-3xl p-8 min-h-full dark:ring-white/10 ring-primary/5 bg-transparent shadow-xl dark:shadow-thick">
 				<div className="flex-grow bg-white bg-opacity-65 w-full ring-2 rounded-3xl p-8 dark:ring-white/10 ring-primary/5 shadow-xl dark:shadow-thick">
 					<span className="text-lg font-bold font-sans">Roles</span>
 					<div className="min-h-20 flex flex-col items-start">
-						<div>• Role #1</div>
-						<div>• Role #2</div>
-						<div>• Role #3</div>
-						<div>• Role #4</div>
+						{roles.map((role, index) => (
+                                <div key={index} className="flex justify-between items-center">
+                                    <span>• {role}</span>
+                                    <button onClick={() => handleDeleteRole(index)} className="text-red-500">Delete</button>
+                                </div>
+                            ))}
 					</div>
-					<form className="flex flex-row gap-2 mb-5">
-						<input placeholder="••••••••" type="text" name="roleItem" className="px-4 focus:outline-none text-white appearance-none h-8 rounded-lg w-full pl-3 pr-10 placeholder-gray-400 bg-primary/50" />
-						<button type="submit" className="bg-white border border-primary dark:border-white rounded-lg px-4 py-2 text-primary h-8 flex flex-row items-center justify-center">+</button>
-					</form>
+					<div className="flex flex-row gap-2 mb-5">
+                            <input
+                                placeholder="••••••••"
+                                type="text"
+                                value={addRole}
+                                onChange={handleAddRoleChange}
+                                className="px-4 focus:outline-none text-white appearance-none h-8 rounded-lg w-full pl-3 pr-10 placeholder-gray-400 bg-primary/50"
+                            />
+                            <button
+                                onClick={handleAddRole}
+                                className="bg-white border border-primary dark:border-white rounded-lg px-4 py-2 text-primary h-8 flex flex-row items-center justify-center"
+                            >
+                                +
+                            </button>
+                        </div>
 				</div>
 				<div className="flex-grow bg-white bg-opacity-65 w-full ring-2 rounded-3xl p-8 dark:ring-white/10 ring-primary/5 shadow-xl dark:shadow-thick">
 					<span className="text-lg font-bold font-sans">Goals</span>
 					<div className="min-h-20 flex flex-col items-start">
-						<div>• Goal #1</div>
-						<div>• Goal #2</div>
-						<div>• Goal #3</div>
-						<div>• Goal #4</div>
+						{goals.map((goal, index) => (
+                                <div key={index} className="flex justify-between items-center">
+                                    <span>• {goal}</span>
+                                    <button onClick={() => handleDeleteGoal(index)} className="text-red-500">Delete</button>
+                                </div>
+                            ))}
 					</div>
-					<form className="flex flex-row gap-2 mb-5">
-						<input placeholder="••••••••" type="text" name="goalItem" className="px-4 focus:outline-none text-white appearance-none h-8 rounded-lg w-full pl-3 pr-10 placeholder-gray-400 bg-primary/50" />
-						<button type="submit" className="bg-white border border-primary dark:border-white rounded-lg px-4 py-2 text-primary h-8 flex flex-row items-center justify-center">+</button>
-					</form>
+					<div className="flex flex-row gap-2 mb-5">
+                            <input
+                                placeholder="••••••••"
+                                type="text"
+                                value={addGoal}
+                                onChange={handleAddGoalChange}
+                                className="px-4 focus:outline-none text-white appearance-none h-8 rounded-lg w-full pl-3 pr-10 placeholder-gray-400 bg-primary/50"
+                            />
+                            <button
+                                onClick={handleAddGoal}
+                                className="bg-white border border-primary dark:border-white rounded-lg px-4 py-2 text-primary h-8 flex flex-row items-center justify-center"
+                            >
+                                +
+                            </button>
+                        </div>
 				</div>
 			</div>
 			<div className="bg-[url('/adventure2.jpg')] p-4 bg-cover bg-center w-full min-h-full ring-2 rounded-3xl md:block dark:ring-white/10 ring-primary/5 bg-transparent shadow-xl dark:shadow-thick">
@@ -96,29 +284,55 @@ export default function PlanningBoard() {
 					<div className="w-full bg-white rounded-3xl py-4 px-8 bg-opacity-65 mb-4">
 						<span className="text-xl font-bold font-sans">Study this week</span>
 						<div className="min-h-20 flex flex-col gap-2 items-start">
-							<div>• Study Item #1</div>
-							<div>• Study Item #2</div>
-							<div>• Study Item #3</div>
-							<div>• Study Item #4</div>
+							{studyNow.map((study, index) => (
+                                <div key={index} className="flex justify-between items-center">
+                                    <span>• {study}</span>
+                                    <button onClick={() => handleDeleteStudyNow(index)} className="text-red-500">Delete</button>
+                                </div>
+                            ))}
 						</div>
-						<form className="flex flex-row gap-2 mb-5">
-							<input placeholder="••••••••" type="text" name="studyItem" className="px-4 focus:outline-none appearance-none h-8 rounded-lg pl-3 placeholder-gray-400 bg-primary/50" />
-							<button type="submit" className="bg-white border border-primary dark:border-white rounded-lg px-4 py-2 text-primary h-8 flex flex-row items-center justify-center">+</button>
-						</form>
+						<div className="flex flex-row gap-2 mb-5">
+                            <input
+                                placeholder="••••••••"
+                                type="text"
+                                value={addStudyNow}
+                                onChange={handleAddStudyNowChange}
+                                className="px-4 focus:outline-none text-white appearance-none h-8 rounded-lg w-full pl-3 pr-10 placeholder-gray-400 bg-primary/50"
+                            />
+                            <button
+                                onClick={handleAddStudyNow}
+                                className="bg-white border border-primary dark:border-white rounded-lg px-4 py-2 text-primary h-8 flex flex-row items-center justify-center"
+                            >
+                                +
+                            </button>
+                        </div>
 
 					</div>
 					<div className="w-full bg-white rounded-3xl py-4 px-8 bg-opacity-65 mb-4">
 						<span className="text-xl font-bold font-sans">Study in the future</span>
 						<div className="min-h-20 flex flex-col gap-2 items-start">
-							<div>• Study Item #1</div>
-							<div>• Study Item #2</div>
-							<div>• Study Item #3</div>
-							<div>• Study Item #4</div>
+							{studyFuture.map((study, index) => (
+                                <div key={index} className="flex justify-between items-center">
+                                    <span>• {study}</span>
+                                    <button onClick={() => handleDeleteStudyFuture(index)} className="text-red-500">Delete</button>
+                                </div>
+                            ))}
 						</div>
-						<form className="flex flex-row gap-2 mb-5">
-							<input placeholder="••••••••" type="text" name="futureStudyItem" className="px-4 focus:outline-none appearance-none h-8 rounded-lg pl-3 placeholder-gray-400 bg-primary/50" />
-							<button type="submit" className="bg-white border border-primary dark:border-white rounded-lg px-4 py-2 text-primary h-8 flex flex-row items-center justify-center">+</button>
-					</form>
+						<div className="flex flex-row gap-2 mb-5">
+                            <input
+                                placeholder="••••••••"
+                                type="text"
+                                value={addStudyFuture}
+                                onChange={handleAddStudyFutureChange}
+                                className="px-4 focus:outline-none text-white appearance-none h-8 rounded-lg w-full pl-3 pr-10 placeholder-gray-400 bg-primary/50"
+                            />
+                            <button
+                                onClick={handleAddStudyFuture}
+                                className="bg-white border border-primary dark:border-white rounded-lg px-4 py-2 text-primary h-8 flex flex-row items-center justify-center"
+                            >
+                                +
+                            </button>
+                        </div>
 					</div>
 					</div>
 			</div>
@@ -143,6 +357,12 @@ export default function PlanningBoard() {
 					  <div className="w-full flex flex-col justify-between bg-white bg-opacity-65 p-4 rounded-3xl">
 						  <div className="w-full h-full flex flex-col gap-2">
 							  <div className="flex flex-col gap-2 min-h-96">  
+								{missState.map((miss, index) => (
+									<div key={index} className="flex justify-between items-center">
+										<span>• {miss}</span>
+										<button onClick={() => handleDeleteMissState(index)} className="text-red-500">Delete</button>
+									</div>
+								))}
 								<div className="flex flex-row justify-between">
 								  Principle title Here
 								  <button className="border border-red-500 rounded-full px-2 py-0.5 text-red-500 text-xs">X</button>
@@ -159,6 +379,21 @@ export default function PlanningBoard() {
 								</div>
 								<p className="pl-4">Description of principle Here</p>
 							</div>
+							{/* <div className="flex flex-row gap-2 mb-5">
+								<input
+									placeholder="••••••••"
+									type="text"
+									value={addMissState}
+									onChange={handleAddMissStateChange}
+									className="px-4 focus:outline-none text-white appearance-none h-8 rounded-lg w-full pl-3 pr-10 placeholder-gray-400 bg-primary/50"
+								/>
+								<button
+									onClick={handleAddMissState}
+									className="bg-white border border-primary dark:border-white rounded-lg px-4 py-2 text-primary h-8 flex flex-row items-center justify-center"
+								>
+									+
+								</button>
+							</div> */}
 							<form action="" className="flex flex-col gap-2">
 								<input
 									className="px-4 focus:outline-none text-white appearance-none h-8 rounded-lg w-full pl-3 pr-10 placeholder-gray-400 bg-primary/50"

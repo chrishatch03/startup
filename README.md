@@ -82,3 +82,17 @@ For this deliverable I properly styled the application into its final appearance
 - [x] **Application elements** - Used good contrast and whitespace
 - [x] **Application text content** - Consistent fonts, Headers are bolded and often times bigger to enhance readability
 - [x] **Application images** - Background images are properly covering and centered on their parent divs. Smaller images are sized correctly.
+
+
+## React deliverable
+
+For this deliverable I used JavaScript and React so that the application completely works for a single user. I also added placeholders for future technology.
+
+- [x] **Bundled and transpiled** - done!
+- [x] **Components** - Login, voting list, vote are all components with mocks for login, WebSocket.
+  - [x] **login** - When you press enter or the login button it takes you to the voting page.
+  - [x] **database** - Displayed the voting counts. Currently this is stored and retrieved from local storage, but it will be replaced with the database data later.
+  - [x] **WebSocket** - I used the setInterval function to periodically increase a random vote count. This will be replaced with WebSocket messages later.
+  - [x] **application logic** - The highlight and ranking number change based up the user's selections.
+- [x] **Router** - Routing between login and voting components.
+- [x] **Hooks** - Vue uses class properties instead of `UseState` to track changes in vote state.
