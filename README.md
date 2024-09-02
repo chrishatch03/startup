@@ -89,10 +89,10 @@ For this deliverable I properly styled the application into its final appearance
 For this deliverable I used JavaScript and React so that the application completely works for a single user. I also added placeholders for future technology.
 
 - [x] **Bundled and transpiled** - done!
-- [x] **Components** - Login, voting list, vote are all components with mocks for login, WebSocket.
-  - [x] **login** - When you press enter or the login button it takes you to the voting page.
-  - [x] **database** - Displayed the voting counts. Currently this is stored and retrieved from local storage, but it will be replaced with the database data later.
-  - [x] **WebSocket** - I used the setInterval function to periodically increase a random vote count. This will be replaced with WebSocket messages later.
+- [x] **Components** - Login, planningBoard, chat are all components with mock structure for chat feature websocket.
+  - [x] **login** - When you press the login button it takes you to the voting page.
+  - [x] **database** - Displayed each of the lists necessary for planning functionality. Currently this is stored and retrieved from local storage, but it will be replaced with the database data later.
+  - [x] **WebSocket** - You recieve an automatic response when you send a message using the chat. This will be replaced with WebSocket messages later.
   - [x] **application logic** - The highlight and ranking number change based up the user's selections.
 - [x] **Router** - Routing between login and voting components.
 - [x] **Hooks** - Vue uses class properties instead of `UseState` to track changes in vote state.
