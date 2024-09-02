@@ -15,27 +15,42 @@ export default function PlanningBoard() {
     const [missState, setMissState] = useState([]);
 
 	useEffect(() => {
-        const storedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
-        if (storedTasks.length === 0) {
-            storedTasks.push('Add a task to get started');
-        }
-        setTasks(storedTasks);
-
-        const storedRoles = JSON.parse(localStorage.getItem('roles')) || [];
-        setRoles(storedRoles);
-
-        const storedGoals = JSON.parse(localStorage.getItem('goals')) || [];
-        setGoals(storedGoals);
-
-        const storedStudyNow = JSON.parse(localStorage.getItem('studyNow')) || [];
-        setStudyNow(storedStudyNow);
-
-        const storedStudyFuture = JSON.parse(localStorage.getItem('studyFuture')) || [];
-        setStudyFuture(storedStudyFuture);
-
-        const storedMissState = JSON.parse(localStorage.getItem('missState')) || [];
-        setMissState(storedMissState);
-    }, []);
+		const storedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
+		if (storedTasks.length === 0) {
+			storedTasks.push('Add a task to get started');
+		}
+		setTasks(storedTasks);
+	
+		const storedRoles = JSON.parse(localStorage.getItem('roles')) || [];
+		if (storedRoles.length === 0) {
+			storedRoles.push('Add a role');
+		}
+		setRoles(storedRoles);
+	
+		const storedGoals = JSON.parse(localStorage.getItem('goals')) || [];
+		if (storedGoals.length === 0) {
+			storedGoals.push('Add a goal');
+		}
+		setGoals(storedGoals);
+	
+		const storedStudyNow = JSON.parse(localStorage.getItem('studyNow')) || [];
+		if (storedStudyNow.length === 0) {
+			storedStudyNow.push('Add a study item');
+		}
+		setStudyNow(storedStudyNow);
+	
+		const storedStudyFuture = JSON.parse(localStorage.getItem('studyFuture')) || [];
+		if (storedStudyFuture.length === 0) {
+			storedStudyFuture.push('Add a study item');
+		}
+		setStudyFuture(storedStudyFuture);
+	
+		const storedMissState = JSON.parse(localStorage.getItem('missState')) || [];
+		if (storedMissState.length === 0) {
+			storedMissState.push({ principle: 'Add a principle to get started', description: 'Describe it so that it is clearly defined' });
+		}
+		setMissState(storedMissState);
+	}, []);
 
     const handleAddTask = () => {
         if (addTask.trim() !== '') {
