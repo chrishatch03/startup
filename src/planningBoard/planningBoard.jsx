@@ -225,7 +225,7 @@ export default function PlanningBoard() {
 							{roles.map((role, index) => (
 								<div key={index} className="flex justify-between items-center">
 									<span>• {role}</span>
-									<button onClick={() => handleDeleteRole(index)} className="text-red-500">
+									<button onClick={() => handleDeleteRole(index)} className="bg-red-500 bg-opacity-60 text-white p-1 rounded-lg ml-2">
 										Delete
 									</button>
 								</div>
@@ -244,7 +244,7 @@ export default function PlanningBoard() {
 							{goals.map((goal, index) => (
 								<div key={index} className="flex justify-between items-center">
 									<span>• {goal}</span>
-									<button onClick={() => handleDeleteGoal(index)} className="text-red-500">
+									<button onClick={() => handleDeleteGoal(index)} className="bg-red-500 bg-opacity-60 text-white p-1 rounded-lg ml-2">
 										Delete
 									</button>
 								</div>
@@ -288,7 +288,7 @@ export default function PlanningBoard() {
 								{studyNow.map((study, index) => (
 									<div key={index} className="flex justify-between items-center">
 										<span>• {study}</span>
-										<button onClick={() => handleDeleteStudyNow(index)} className="text-red-500">
+										<button onClick={() => handleDeleteStudyNow(index)} className="bg-red-500 bg-opacity-60 text-white p-1 rounded-lg ml-2">
 											Delete
 										</button>
 									</div>
@@ -307,7 +307,7 @@ export default function PlanningBoard() {
 								{studyFuture.map((study, index) => (
 									<div key={index} className="flex justify-between items-center">
 										<span>• {study}</span>
-										<button onClick={() => handleDeleteStudyFuture(index)} className="text-red-500">
+										<button onClick={() => handleDeleteStudyFuture(index)} className="bg-red-500 bg-opacity-60 text-white p-1 rounded-lg ml-2">
 											Delete
 										</button>
 									</div>
