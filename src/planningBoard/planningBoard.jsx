@@ -1,5 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
-import { Context } from '../context/context';
+import React, { useState, useEffect } from 'react';
 
 export default function PlanningBoard() {
     const [addTask, setAddTask] = useState('');
@@ -12,7 +11,7 @@ export default function PlanningBoard() {
     const [studyNow, setStudyNow] = useState([]);
     const [addStudyFuture, setAddStudyFuture] = useState('');
     const [studyFuture, setStudyFuture] = useState([]);
-    const [addMissState, setAddMissState] = useState('');
+    const [addMissState, setAddMissState] = useState({ principle: '', description: '' });
     const [missState, setMissState] = useState([]);
 
 	useEffect(() => {
@@ -134,11 +133,11 @@ export default function PlanningBoard() {
     };
 
     const handleAddMissState = () => {
-        if (addMissState.trim() !== '') {
+        if (addMissState.principle.trim() !== '' && addMissState.description.trim() !== '') {
             const updatedMissState = [...missState, addMissState];
             localStorage.setItem('missState', JSON.stringify(updatedMissState));
             setMissState(updatedMissState);
-            setAddMissState('');
+            setAddMissState({ principle: '', description: '' });
         }
     };
 
@@ -149,7 +148,11 @@ export default function PlanningBoard() {
     };
 
     const handleAddMissStateChange = (event) => {
-        setAddMissState(event.target.value);
+        const { name, value } = event.target;
+        setAddMissState((prevState) => ({
+            ...prevState,
+            [name]: value,
+        }));
     };
 
 
@@ -356,34 +359,31 @@ export default function PlanningBoard() {
 					  <hr className="border-t-2 border-gray-300 dark:border-zinc-400 my-4"/>
 					  <div className="w-full flex flex-col justify-between bg-white bg-opacity-65 p-4 rounded-3xl">
 						  <div className="w-full h-full flex flex-col gap-2">
-							  <div className="flex flex-col gap-2 min-h-96">  
-								{missState.map((miss, index) => (
-									<div key={index} className="flex justify-between items-center">
-										<span>• {miss}</span>
-										<button onClick={() => handleDeleteMissState(index)} className="text-red-500">Delete</button>
+							  <div className="flex flex-col gap-2 text-start min-h-96">  
+							  {missState.map((miss, index) => (
+								<>
+									<div key={index} className="flex flex-row justify-between">
+										{miss.principle}
+										<button onClick={() => handleDeleteMissState(index)} className="border border-red-500 rounded-full px-2 py-0.5 text-red-500 text-xs">X</button>
 									</div>
-								))}
-								<div className="flex flex-row justify-between">
-								  Principle title Here
-								  <button className="border border-red-500 rounded-full px-2 py-0.5 text-red-500 text-xs">X</button>
-								</div>
-								<p className="pl-4">Description of principle Here</p>
-								<div className="flex flex-row justify-between">
-								  Principle title Here
-								  <button className="border border-red-500 rounded-full px-2 py-0.5 text-red-500 text-xs">X</button>
-								</div>
-								<p className="pl-4">Description of principle Here</p>
-								<div className="flex flex-row justify-between">
-								  Principle title Here
-								  <button className="border border-red-500 rounded-full px-2 py-0.5 text-red-500 text-xs">X</button>
-								</div>
-								<p className="pl-4">Description of principle Here</p>
+									<p className="pl-8">{miss.description}</p>
+								</>
+                            ))}
 							</div>
-							{/* <div className="flex flex-row gap-2 mb-5">
+							<div className="flex flex-col gap-2 mb-5">
 								<input
-									placeholder="••••••••"
+									name="principle"
+									placeholder="Principle"
 									type="text"
-									value={addMissState}
+									value={addMissState.principle}
+									onChange={handleAddMissStateChange}
+									className="px-4 focus:outline-none text-white appearance-none h-8 rounded-lg w-full pl-3 pr-10 placeholder-gray-400 bg-primary/50"
+								/>
+								<input
+									name="description"
+									placeholder="Description"
+									type="text"
+									value={addMissState.description}
 									onChange={handleAddMissStateChange}
 									className="px-4 focus:outline-none text-white appearance-none h-8 rounded-lg w-full pl-3 pr-10 placeholder-gray-400 bg-primary/50"
 								/>
@@ -393,26 +393,7 @@ export default function PlanningBoard() {
 								>
 									+
 								</button>
-							</div> */}
-							<form action="" className="flex flex-col gap-2">
-								<input
-									className="px-4 focus:outline-none text-white appearance-none h-8 rounded-lg w-full pl-3 pr-10 placeholder-gray-400 bg-primary/50"
-									type="text"
-									name="firstItem"
-									placeholder="Principle"
-								/>
-								<input
-									className="px-4 focus:outline-none text-white appearance-none h-8 rounded-lg w-full pl-3 pr-10 placeholder-gray-400 bg-primary/50"
-									type="text"
-									name="secondItem"
-									placeholder="Description"
-								/>
-								<button
-									className="border border-primary dark:border-white rounded-lg px-4 py-2 text-white h-8 flex flex-row items-center justify-center bg-black dark:bg-white dark:text-primary"
-									pendingText="..."
-									type="submit"
-								>+</button>
-							</form>
+							</div>
 						  </div>
 					  </div>
 					</div>
