@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { MessageDialog } from '../components/messageDialog';
 
 
 export default function Login() {
 	  const navigate = useNavigate();
-	  const [displayError, setDisplayError] = useState('');
+	  const [displayError, setDisplayError] = useState(null);
 
 	  const [userName, setUserName] = useState('');
 	  const [password, setPassword] = useState('');
@@ -56,8 +57,9 @@ export default function Login() {
 						<input value={userName} onChange={handleUserNameChange} type="text" id="username" name="username" className="text-white px-4 focus:outline-none appearance-none h-8 rounded-lg w-full pl-3 pr-10 placeholder-gray-400 bg-primary/50" required />
 						<label htmlFor="password">Password:</label>
 						<input value={password} onChange={handlePasswordChange} type="password" id="password" name="password" className="text-white px-4 focus:outline-none appearance-none h-8 rounded-lg w-full pl-3 pr-10 placeholder-gray-400 bg-primary/50" required />
-						<button className="bg-black py-2 px-4 rounded-3xl text-white" onClick={() => loginOrCreate('/api/auth/login')}>Sign In</button>
-						<button className="bg-black py-2 px-4 rounded-3xl text-white" onClick={() => loginOrCreate('/api/auth/create')}>Sign Up</button>
+						<button className="bg-black py-2 px-4 rounded-3xl text-white" onClick={() => loginOrCreate('/api/auth/login')} disabled={!userName || !password}>Sign In</button>
+						<button className="bg-black py-2 px-4 rounded-3xl text-white" onClick={() => loginOrCreate('/api/auth/create')} disabled={!userName || !password}>Sign Up</button>
+						<MessageDialog message={displayError} onHide={() => setDisplayError(null)} />
 					</div>
 				</div>
 			</div>
