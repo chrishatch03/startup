@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { MessageDialog } from '../components/messageDialog';
+import { MessageDialog } from './messageDialog';
 import { Unauthenticated } from './unauthenticated';
 import { Authenticated } from './authenticated';
 import { AuthState } from './authState';
@@ -56,6 +56,18 @@ export default function Login() {
 				<h1 className="text-3xl mt-6 font-medium lg:text-5xl tracking-tight text-gray-700 dark:text-gray-100">Plan your Adventure!</h1>
 				<div className="h-3/4 flex flex-col items-center justify-center">
 					<div className="flex flex-col items-center bg-white bg-opacity-65 my-2 p-4 lg:p-8 rounded-3xl gap-2">
+						{authState !== AuthState.Unknown && <h1>Welcome to Simon</h1>}
+						{authState === AuthState.Authenticated && (
+						<Authenticated userName={userName} onLogout={() => onAuthChange(userName, AuthState.Unauthenticated)} />
+						)}
+						{authState === AuthState.Unauthenticated && (
+						<Unauthenticated
+							userName={userName}
+							onLogin={(loginUserName) => {
+							onAuthChange(loginUserName, AuthState.Authenticated);
+							}}
+						/>
+						)}
 						<label htmlFor="username">Username:</label>
 						<input value={userName} onChange={handleUserNameChange} type="text" id="username" name="username" className="text-white px-4 focus:outline-none appearance-none h-8 rounded-lg w-full pl-3 pr-10 placeholder-gray-400 bg-primary/50" required />
 						<label htmlFor="password">Password:</label>
