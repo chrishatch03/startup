@@ -6,19 +6,19 @@ import { useNavigate } from 'react-router-dom';
 
 // { userName, authState, onAuthChange } as props if using simon service code with AuthState component
 export default function Login() {
-	  const navigate = useNavigate();
-	  const [displayError, setDisplayError] = useState(null);
+	const navigate = useNavigate();
+	const [displayError, setDisplayError] = useState(null);
 
-	  const [userName, setUserName] = useState('');
-	  const [password, setPassword] = useState('');
+	const [userName, setUserName] = useState('');
+	const [password, setPassword] = useState('');
 
-	  const handleUserNameChange = (event) => {
-		setUserName(event.target.value);
-	  }
+	const handleUserNameChange = (event) => {
+	setUserName(event.target.value);
+	}
 
-	  const handlePasswordChange = (event) => {
-		setPassword(event.target.value);
-	  }
+	const handlePasswordChange = (event) => {
+	setPassword(event.target.value);
+	}
 
 	async function loginOrCreate(endpoint) {
 		const response = await fetch(endpoint, {
@@ -28,19 +28,22 @@ export default function Login() {
 			'Content-type': 'application/json; charset=UTF-8',
 		  },
 		});
-		if (response?.status === 401) {
-			const body = await response.json();
+		const body = await response.json();
+
+		if (response.status === 401) {
 			setDisplayError(`⚠ No User Error: ${body.msg}`);
-		}
-		if (response?.status === 200) {
-		  localStorage.setItem('userName', userName);
-		  console.log('Logged in');
-		  navigate('/planningBoard');
-		} else {
-		  const body = await response.json();
-		  setDisplayError(`⚠ Error: ${body.msg}`);
-		}
-	  }
+		} else if (response.status === 200) {
+			console.log(JSON.stringify(body));
+			localStorage.setItem('userName', userName);
+			localStorage.setItem('uid', body.uid);
+			localStorage.setItem('token', body.token);
+			console.log('Logged in');
+			navigate('/planningBoard');
+				} else {
+				const body = await response.json();
+				setDisplayError(`⚠ Error: ${body.msg}`);
+				}
+			}
 
 
   return (
