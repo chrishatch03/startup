@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+// import { Unauthenticated } from './unauthenticated';
+// import { Authenticated } from './authenticated';
+// import { AuthState } from './authState';
 
-
+// { userName, authState, onAuthChange } as props if using simon service code with AuthState component
 export default function Login() {
-	//   const navigate = useNavigate();
+	  const navigate = useNavigate();
 	  const [displayError, setDisplayError] = useState(null);
 
 	  const [userName, setUserName] = useState('');
@@ -25,10 +28,14 @@ export default function Login() {
 			'Content-type': 'application/json; charset=UTF-8',
 		  },
 		});
+		if (response?.status === 401) {
+			const body = await response.json();
+			setDisplayError(`⚠ No User Error: ${body.msg}`);
+		}
 		if (response?.status === 200) {
 		  localStorage.setItem('userName', userName);
 		  console.log('Logged in');
-		//   navigate('/planningBoard');
+		  navigate('/planningBoard');
 		} else {
 		  const body = await response.json();
 		  setDisplayError(`⚠ Error: ${body.msg}`);
@@ -51,6 +58,21 @@ export default function Login() {
 				<h1 className="text-3xl mt-6 font-medium lg:text-5xl tracking-tight text-gray-700 dark:text-gray-100">Plan your Adventure!</h1>
 				<div className="h-3/4 flex flex-col items-center justify-center">
 					<div className="flex flex-col items-center bg-white bg-opacity-65 my-2 p-4 lg:p-8 rounded-3xl gap-2">
+					{/* <div>
+        {authState !== AuthState.Unknown && <h1>Welcome to MyVision Weekly Planner</h1>}
+        {authState === AuthState.Authenticated && (
+          <Authenticated userName={userName} onLogout={() => onAuthChange(userName, AuthState.Unauthenticated)} />
+        )}
+        {authState === AuthState.Unauthenticated && (
+          <Unauthenticated
+            userName={userName}
+            onLogin={(loginUserName) => {
+              onAuthChange(loginUserName, AuthState.Authenticated);
+            }}
+          />
+        )}
+      </div> */}
+	  					{displayError && <p className="text-red-500">{displayError}</p>}
 						<label htmlFor="username">Username:</label>
 						<input value={userName} onChange={handleUserNameChange} type="text" id="username" name="username" className="text-white px-4 focus:outline-none appearance-none h-8 rounded-lg w-full pl-3 pr-10 placeholder-gray-400 bg-primary/50" required />
 						<label htmlFor="password">Password:</label>
