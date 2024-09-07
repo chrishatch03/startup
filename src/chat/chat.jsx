@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 export default function Chat() {
     const uid = localStorage.getItem('uid');
-    
+
     // INPUTS
     const [joinRoomId, setJoinRoomId] = useState('');
     const [newMessage, setNewMessage] = useState('');
@@ -10,11 +10,28 @@ export default function Chat() {
     // Component State
     const [room, setRoom] = useState({});
 
+    useEffect(() => {
+      getMessagesFromRoom();
+    }, [room.id, messages]);
+
   
     const handleJoinRoomIdChange = (e) => {
       e.preventDefault();
       setJoinRoomId(e.target.value);
     };
+
+    async function handleJoinRoom() {
+      const response = await fetch(`/api/rooms/${joinRoomId}/users`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ uid: uid }),
+      });
+      const room = await response.json();
+      setRoom(room)
+      return room;
+    }
   
     const handleCreateRoom = async (e) => {
       e.preventDefault();
@@ -32,7 +49,6 @@ export default function Chat() {
       if (response.status === 201) {
         // setRoomId(room.id);
         setRoom(room);
-        setUsers(room.users);
         
         // Get messages from the newly created room
         const messages = await getMessagesFromRoom(room.id);
@@ -48,28 +64,33 @@ export default function Chat() {
   
     const handleSendMessage = async (e) => {
       e.preventDefault();
-      const message = await sendMessageToRoom(currentChat, uid, newMessage);
+      
+      const response = await fetch(`/api/rooms/${room.id}/messages`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ userId: uid, text: newMessage }),
+      });
+    
+      if (!response.ok) {
+        throw new Error(`Error: ${response.status} ${response.statusText}`);
+      }
+    
+      const message = await response.json();
       setMessages([...messages, message]);
       setNewMessage('');
     };
 
     async function getMessagesFromRoom() {
-      const response = await fetch(`/api/rooms/${roomId}/messages`);
+      const response = await fetch(`/api/rooms/${room.id}/messages`, {
+        method: 'GET',
+        'content-Type': 'application/json',
+      });
       const messages = await response.json();
       return messages;
     }
 
-    async function sendMessageToRoom( userId, text) {
-      const response = await fetch(`/api/rooms/${roomId}/messages`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ userId, text }),
-      });
-      const message = await response.json();
-      return message;
-    }
 
     async function removeUserFromRoom( userId) {
       await fetch(`/api/rooms/${roomId}/users/${userId}`, {
@@ -129,13 +150,24 @@ export default function Chat() {
 			<div className="h-full lg:col-span-3 lg:col-start-2 bg-white/65 rounded-3xl flex flex-col justify-start pb-8 items-center">
 			  <h2 className="font-bold text-3xl border-b-2 border-black w-full flex justify-center items-center h-20">{room.id ? (room.id) : ("Chat Display")}</h2>
                   <div id="message-display" className="w-full h-full flex flex-col gap-8 p-8">
-                        {messages.map((msg, index) => (
-                            <div key={index} className={`flex ${uid === msg.uid ? 'justify-end' : 'justify-start'}`}>
+                        {/* {messages.map((msg) => (
+                            <div className={`flex ${uid === msg.uid ? 'justify-end' : 'justify-start'}`}>
                                 <p className="p-4 bg-blue-400 rounded-3xl max-w-96 text-wrap">
                                     {new Date(msg.date).toLocaleTimeString()}: {msg.message}
                                 </p>
                             </div>
-                        ))}
+                        ))} */}
+                        {Array.isArray(messages) ? (
+          messages.map((message) => (
+            <div className={`flex ${uid === message.uid ? 'justify-end' : 'justify-start'}`}>
+                                <p className="p-4 bg-blue-400 rounded-3xl max-w-96 text-wrap">
+                                    {message.timeStamp}: {message.text}
+                                </p>
+                            </div>
+          ))
+        ) : (
+          <div>Start a new message</div>
+        )}
                   </div>
 			<div className="w-3/4 px-8 h-20 rounded-3xl ring-2 ring-black bg-red-300 flex justify-center items-center">
 			  <input type="text" placeholder="Send a message..." value={newMessage} onChange={handleNewMessageChange} className="w-3/4 p-2 rounded-xl"/>
