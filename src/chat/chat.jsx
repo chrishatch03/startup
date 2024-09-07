@@ -1,18 +1,14 @@
 import React, { useState, useEffect } from 'react';
 
 export default function Chat() {
-    // const uid = '1234';
-    // const [currentChat, setCurrentChat] = useState('');
+    const uid = localStorage.getItem('uid');
+    
     // INPUTS
     const [joinRoomId, setJoinRoomId] = useState('');
     const [newMessage, setNewMessage] = useState('');
     const [messages, setMessages] = useState([]);
-    // const [rooms, setRooms] = useState([]);
+    // Component State
     const [room, setRoom] = useState({});
-    const [roomId, setRoomId] = useState('');
-    const [users, setUsers] = useState([]);
-
-    const uid = localStorage.getItem('uid');
 
   
     const handleJoinRoomIdChange = (e) => {
@@ -34,8 +30,7 @@ export default function Chat() {
       const room = await response.json();
       
       if (response.status === 201) {
-        console.log(`Room Created: ${room}`);
-        setRoomId(room.id);
+        // setRoomId(room.id);
         setRoom(room);
         setUsers(room.users);
         
@@ -58,13 +53,13 @@ export default function Chat() {
       setNewMessage('');
     };
 
-    async function getMessagesFromRoom(roomId) {
+    async function getMessagesFromRoom() {
       const response = await fetch(`/api/rooms/${roomId}/messages`);
       const messages = await response.json();
       return messages;
     }
 
-    async function sendMessageToRoom(roomId, userId, text) {
+    async function sendMessageToRoom( userId, text) {
       const response = await fetch(`/api/rooms/${roomId}/messages`, {
         method: 'POST',
         headers: {
@@ -76,13 +71,13 @@ export default function Chat() {
       return message;
     }
 
-    async function removeUserFromRoom(roomId, userId) {
+    async function removeUserFromRoom( userId) {
       await fetch(`/api/rooms/${roomId}/users/${userId}`, {
         method: 'DELETE',
       });
     }
 
-    async function handleJoinRoom(joinRoomId) {
+    async function handleJoinRoom() {
       const response = await fetch(`/api/rooms/${joinRoomId}/users`, {
         method: 'POST',
         headers: {
@@ -90,9 +85,9 @@ export default function Chat() {
         },
         body: JSON.stringify({ uid: uid }),
       });
-      const user = await response.json();
-      // console.log(user);
-      return user;
+      const room = await response.json();
+      setRoom(room)
+      return room;
     }
 
     async function getUsers() {
@@ -132,7 +127,7 @@ export default function Chat() {
 				</div>
 			</div>
 			<div className="h-full lg:col-span-3 lg:col-start-2 bg-white/65 rounded-3xl flex flex-col justify-start pb-8 items-center">
-			  <h2 className="font-bold text-3xl border-b-2 border-black w-full flex justify-center items-center h-20">{roomId ? (roomId) : ("Chat Display")}</h2>
+			  <h2 className="font-bold text-3xl border-b-2 border-black w-full flex justify-center items-center h-20">{room.id ? (room.id) : ("Chat Display")}</h2>
                   <div id="message-display" className="w-full h-full flex flex-col gap-8 p-8">
                         {messages.map((msg, index) => (
                             <div key={index} className={`flex ${uid === msg.uid ? 'justify-end' : 'justify-start'}`}>
